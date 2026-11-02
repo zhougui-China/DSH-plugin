@@ -1,0 +1,32 @@
+{
+  "name": "@zhougui/skill-manager",
+  "version": "1.0.0",
+  "description": "Visually browse and manage project-level and personal-level skills in DeepSeek Harness.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["lib/index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg"],
+  "scripts": {
+    "test": "node test/host.mjs"
+  },
+  "keywords": ["deepseek-harness", "dsh", "plugin", "skills", "cordis"],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "// repository": "发布到 GitHub 后补上，例如: { \"type\": \"git\", \"url\": \"https://github.com/<user>/skill-manager.git\" }",
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-layout"]
+    }
+  }
+}

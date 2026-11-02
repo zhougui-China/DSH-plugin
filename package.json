@@ -1,0 +1,13 @@
+{
+  "name": "dsh-plugin",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo of DeepSeek Harness plugins. Each directory under plugins/ is an independently-published npm plugin bundle.",
+  "license": "MIT",
+  "workspaces": [
+    "plugins/*"
+  ],
+  "scripts": {
+    "test": "pnpm -r test"
+  }
+}
